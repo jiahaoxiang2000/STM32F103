@@ -14,9 +14,12 @@ int main(void)
     // Clear the display first
     OLED_Clear();
 
-    // Show a simple number "123" at position (0,0)
-    OLED_ShowString(0, 0, (uint8_t *)"Number:", 16); // Header text
-    OLED_ShowNumber(64, 0, 123, 3, 16);              // Show "123", 3 digits, size 16
+    // Show title texts using bigger font (16)
+    OLED_ShowString(0, 0, (uint8_t *)"plaintext:", 16);
+    OLED_ShowString(0, 2, (uint8_t *)"0123456789ABCDEF", 16);
+
+    OLED_ShowString(0, 4, (uint8_t *)"ciphertext:", 16);
+    OLED_ShowString(0, 6, (uint8_t *)"044EADE551620A67", 16);
 
     while (1)
     {
